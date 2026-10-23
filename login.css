@@ -1,0 +1,78 @@
+/* QuizMaker login page styles only.
+   Keep this file linked from login.php/login page only, not the dashboard.
+   Move the login-specific rules from any old mixed stylesheet into this file.
+*/
+
+.login-page,
+.login-page * {
+    box-sizing: border-box;
+}
+
+.login-page {
+    min-height: 100vh;
+    margin: 0;
+    color: #17233f;
+    background: linear-gradient(135deg, #f5f7ff 0%, #ecebff 100%);
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.login-page button,
+.login-page input,
+.login-page textarea {
+    font: inherit;
+}
+
+.login-page .password-toggle {
+    cursor: pointer;
+}
+
+.login-page :focus-visible {
+    outline: 3px solid rgba(101, 87, 245, .3);
+    outline-offset: 2px;
+}
+.auth-card .password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.auth-card .password-wrapper input {
+    width: 100%;
+    padding-right: 46px;
+}
+
+.auth-card .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: #7b849b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.auth-card .password-toggle:hover {
+    background: #f1efff;
+    color: #6557f5;
+}
+
+.auth-card .password-toggle svg {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.auth-card .password-toggle:focus-visible {
+    outline: 2px solid #6557f5;
+    outline-offset: 2px;
+}

@@ -1,0 +1,363 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#6655f5">
+    <meta name="description" content="Create, manage, share, and review quizzes with QuizMaker.">
+    <title>QuizMaker — Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <a class="brand" href="#home" aria-label="QuizMaker home">
+            <span class="brand-mark" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <rect x="9" y="5" width="22" height="30" rx="4"
+                          stroke="currentColor" stroke-width="2.4"/>
+                    <path d="M15 14h10M15 20h10M15 26h5"
+                          stroke="currentColor" stroke-width="2.4"
+                          stroke-linecap="round"/>
+                    <path d="m23 27 2.5 2.5L31 23"
+                          stroke="currentColor" stroke-width="2.4"
+                          stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </span>
+            <span>QuizMaker</span>
+        </a>
+
+        <nav class="side-nav" aria-label="Main navigation">
+            <a href="#home" class="nav-link active">
+                <span class="nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/>
+                    </svg>
+                </span>
+                <span>Home</span>
+            </a>
+
+            <a href="#create" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="4"/>
+                        <path class="icon-cutout" d="M12 7v10M7 12h10"/>
+                    </svg>
+                </span>
+                <span>Create Quiz</span>
+            </a>
+
+            <a href="ai_dashboard.php" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/>
+                        <circle cx="12" cy="12" r="5"/>
+                    </svg>
+                </span>
+                <span>AI Quiz Maker</span>
+            </a>
+
+            <a href="#quizzes" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 7a2 2 0 0 1 2-2h5l2 2h7a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                        <path class="icon-cutout" d="M3.5 10h17"/>
+                    </svg>
+                </span>
+                <span>My Quizzes</span>
+            </a>
+
+            <a href="#results" class="nav-link">
+                <span class="nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="12" width="4" height="9" rx="1"/>
+                        <rect x="10" y="7" width="4" height="14" rx="1"/>
+                        <rect x="17" y="3" width="4" height="18" rx="1"/>
+                    </svg>
+                </span>
+                <span>Results</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <span>© 2026 QuizMaker</span>
+            <span>Build something worth sharing</span>
+            <button type="button" id="logoutBtn" class="nav-link"
+                    style="width:100%;margin-top:10px;cursor:pointer;text-align:left">
+                ↪ Log out
+            </button>
+        </div>
+    </aside>
+
+    <div class="app-main">
+        <header class="topbar">
+            <label class="search-box" for="quiz-search">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="10.8" cy="10.8" r="6.8"/>
+                    <path d="m16 16 5 5"/>
+                </svg>
+                <input type="search" id="quiz-search"
+                       placeholder="Search your quizzes..." autocomplete="off">
+            </label>
+
+            <div class="topbar-actions">
+                <span class="workspace-pill">
+                    <span class="workspace-dot"></span>
+                    Private workspace
+                </span>
+                <span class="user-avatar" aria-label="Local user">Q</span>
+            </div>
+        </header>
+
+        <main class="dashboard-main">
+            <section id="home" class="hero-banner" aria-labelledby="welcome-title">
+                <div class="hero-copy">
+                    <p class="hero-eyebrow">WELCOME TO QUIZMAKER</p>
+                    <h1 id="welcome-title">Create Your Own Quiz</h1>
+                    <p class="hero-description">
+                        Build, customize, save, and share your quizzes with ease.
+                    </p>
+                    <div class="hero-actions">
+                        <a class="hero-button" href="#create">
+                            <span aria-hidden="true">＋</span> Create a New Quiz
+                        </a>
+                        <a class="hero-button" href="ai_dashboard.php">
+                            <span aria-hidden="true">✦</span> Open AI Quiz Maker
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-art" aria-hidden="true">
+                    <div class="art-orbit orbit-one"></div>
+                    <div class="art-orbit orbit-two"></div>
+                    <div class="art-spark spark-one">✦</div>
+                    <div class="art-spark spark-two">✦</div>
+                    <div class="art-spark spark-three">•</div>
+                    <div class="art-paper">
+                        <div class="paper-top"></div>
+                        <div class="paper-line"><span>✓</span><i></i></div>
+                        <div class="paper-line"><span>✓</span><i></i></div>
+                        <div class="paper-line"><span>✓</span><i></i></div>
+                        <div class="paper-line"><span>✓</span><i></i></div>
+                    </div>
+                    <div class="art-pencil"><span></span></div>
+                </div>
+            </section>
+
+            <div class="dashboard-grid">
+                <section id="create" class="panel create-panel"
+                         aria-labelledby="create-title">
+                    <div class="panel-heading">
+                        <div class="heading-icon plus-icon" aria-hidden="true">＋</div>
+                        <div><h2 id="create-title">Create Quiz</h2></div>
+                    </div>
+
+                    <form id="quizForm" onsubmit="return false;">
+                        <div class="form-field">
+                            <label for="quiz-title">
+                                Quiz Title <span class="required-mark">*</span>
+                            </label>
+                            <input type="text" id="quiz-title" maxlength="255"
+                                   placeholder="Enter quiz title" required>
+                        </div>
+
+                        <div class="form-field">
+                            <label for="quiz-description">
+                                Description <span class="optional-mark">Optional</span>
+                            </label>
+                            <textarea id="quiz-description" rows="3"
+                                      placeholder="Enter quiz description"></textarea>
+                        </div>
+
+                        <div class="form-field time-field">
+                            <label for="quiz-time">
+                                Time Limit <span class="muted-label">(minutes)</span>
+                            </label>
+                            <input type="number" id="quiz-time" min="0" max="1440"
+                                   value="2" step="1" aria-describedby="time-help">
+                            <small id="time-help">
+                                Enter minutes. Example: 2 means two minutes; 0 means
+                                no time limit. The timer starts only when the
+                                participant presses Start Quiz.
+                            </small>
+                        </div>
+
+                        <div class="question-heading">
+                            <button type="button" id="ai-generate-button"
+                                    class="secondary-button">
+                                Generate with AI
+                            </button>
+                            <div><h3>Questions</h3></div>
+                            <button type="button" id="addQuestionButton"
+                                    class="add-question-button">
+                                <span aria-hidden="true">＋</span> Add Question
+                            </button>
+                        </div>
+
+                        <details class="question-editor" id="question-editor">
+                            <summary>
+                                Edit question details
+                                <span class="summary-hint">
+                                    question text, choices, correct answer
+                                </span>
+                            </summary>
+                            <div id="questions"></div>
+                        </details>
+
+                        <div class="form-primary-actions">
+                            <button type="button" id="resetQuizButton"
+                                    class="secondary-button">
+                                Clear Form
+                            </button>
+                            <button type="button" id="saveQuizButton"
+                                    class="primary-button">
+                                <span aria-hidden="true">▣</span> Save Quiz
+                            </button>
+                        </div>
+
+                        <p id="create-status" class="form-status" aria-live="polite"></p>
+                    </form>
+                </section>
+
+                <section id="quizzes" class="panel library-panel"
+                         aria-labelledby="quizzes-title">
+                    <div class="panel-heading library-heading">
+                        <div class="heading-icon folder-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                            </svg>
+                        </div>
+                        <div><h2 id="quizzes-title">My Quizzes</h2></div>
+                        <span class="quiz-count">
+                            <strong id="quiz-count">0</strong> Quizzes
+                        </span>
+                    </div>
+
+                    <div id="quiz-list" class="quiz-list" aria-live="polite">
+                        <p class="loading-state">Loading quizzes…</p>
+                    </div>
+                    <a href="#create" class="text-link">＋ Create another quiz</a>
+                </section>
+
+                <section class="panel preview-panel"
+                         aria-labelledby="preview-panel-title">
+                    <div class="preview-topbar">
+                        <button type="button" class="preview-exit" id="preview-exit">
+                            <span aria-hidden="true">←</span> Exit Quiz
+                        </button>
+                        <div class="preview-progress-info">
+                            <span id="preview-step-label">Choose a quiz</span>
+                            <strong id="preview-progress-text">0%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <span id="preview-progress-bar"></span>
+                        </div>
+                    </div>
+
+                    <div class="preview-panel-body">
+                        <h2 id="preview-panel-title" class="visually-hidden">
+                            Quiz preview
+                        </h2>
+                        <div id="preview-content" aria-live="polite">
+                            <div class="preview-placeholder">
+                                <div class="placeholder-symbol">✓</div>
+                                <h3>Quiz Preview</h3>
+                                <p>Select Preview on a quiz card to see its questions here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="bottom-grid">
+                <section id="results" class="panel results-panel"
+                         aria-labelledby="results-title">
+                    <div class="panel-heading results-heading">
+                        <div class="heading-icon results-icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="3" y="12" width="4" height="9" rx="1"/>
+                                <rect x="10" y="7" width="4" height="14" rx="1"/>
+                                <rect x="17" y="3" width="4" height="18" rx="1"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h2 id="results-title">Quiz Results</h2>
+                            <p>Review your participants’ latest performance.</p>
+                        </div>
+                        <button type="button" id="clear-results-button"
+                                class="secondary-button">
+                            Clear Results
+                        </button>
+                    </div>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Quiz</th>
+                                    <th>Participant</th>
+                                    <th>Score</th>
+                                    <th>Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="results-body">
+                                <tr>
+                                    <td colspan="4" class="table-empty">
+                                        Loading results…
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="results-note">
+                        Results are saved to your local MySQL database.
+                    </p>
+                </section>
+
+                <aside class="panel results-sidecard" aria-live="polite">
+                    <div class="trophy-illustration" aria-hidden="true">
+                        <span>🏆</span>
+                    </div>
+                    <h2 id="results-side-title">No results yet</h2>
+                    <p id="results-side-copy">
+                        Share a quiz and invite people to answer it.
+                        Their scores will appear here.
+                    </p>
+                    <div class="trophy-stars" aria-hidden="true">
+                        <span>✦</span><span>•</span><span>✦</span><span>•</span>
+                    </div>
+                </aside>
+            </div>
+
+            <footer class="page-footer">
+                <span>QuizMaker</span>
+                <span>Create, share, and review quizzes in one place.</span>
+            </footer>
+        </main>
+    </div>
+</div>
+
+<script src="auth-gate.js" defer></script>
+<script src="script.js" defer></script>
+<script>
+document.getElementById("logoutBtn")?.addEventListener("click", async () => {
+    const button = document.getElementById("logoutBtn");
+
+    button.disabled = true;
+    button.textContent = "Logging out…";
+
+    try {
+        await fetch("auth_api.php?action=logout", {
+            method: "POST",
+            credentials: "same-origin"
+        });
+    } catch (error) {
+        console.error("Logout request failed:", error);
+    } finally {
+        window.location.href = "login.php";
+    }
+});
+</script>
+</body>
+</html>
