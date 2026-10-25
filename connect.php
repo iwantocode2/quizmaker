@@ -1,8 +1,8 @@
 <?php
-// Replace the four placeholder values with the exact MySQL details from InfinityFree.
-$host = "sql202.infinityfree.com";
-$user = "if0_43146270";
-$password = "n91UPbimKao2";
+// Replace the four placeholder values with the exact MySQL details from InfinityFree in hosting account.
+$host = "your mysql username";
+$user = "your  mysql password";
+$password = "your hosting password";
 $database = "if0_43146270_quizmaker";
 
 mysqli_report(MYSQLI_REPORT_OFF);
